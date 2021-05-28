@@ -1,149 +1,102 @@
-// //slice takes a slice out of your array by copying whichever elements you specify
-// //slice is not destructive meaning your original array won't be changed at all by calling slice() on it
-// //that means that if you want to keep the results of your slice you must save them in a variable
-// //slice accepts 2 arguments:
-// //the first argument tells slice where to begin copying
-// //the second argument is optional
-// //if you include it it will tell slice where to end the copy
-// //the slice will end at the element before the element you pass in as the second argument
-// //if you don't pass slice the optional second argument
-// //your slice will end at the last element of the array
-// let array = [
-//   "filet mignon",
-//   "lobster ravioli",
-//   "salad",
-//   "grilled veggies",
-//   "fruit salad",
-// ];
-// let vegetarianFriendly = array.slice(2);
-// console.log(array.slice(2));
-// console.log(vegetarianFriendly);
-// console.log(array);
+//function syntax:
+// function nameOfFunction(parameters){
+//   //do work in here
+//   return //what you want to return
+// }
+//example:
+// function addNumbers(a, b) {
+//   return a + b;
+// }
+// addNumbers(1, 2);
 
-// let seaFood = array.slice(1, 2);
-// console.log(array.slice(1, 2), "the return value of array.slice(1,2)");
-// console.log(seaFood);
-// console.log(array);
+//write a function that accepts two numbers multiples them and returns the product
 
-// //splice() on the other hand is destructive meaning that any changes you make with splice()
-// //will mutate the array you called splice() on
-// //splice accepts 3 optional arguments:
-// //THIS IS WHERE YOU LEFT OFF!!
-// //now imagine that your roomate ate the last of your favorite snack
-// //but brought some strawberries home from the farmers market
-// //how can you use splice() to remove the strawberries from the groceryList array and add
-// //your favoriteSnack to the groceryList array
-// let favoriteSnack = "???";
-// let groceryList = ["strawberries", "eggs", "avocadoes", "cookies"];
+// //arrow function syntax:
+// // const nameOfFunction = (parameters) => {
+// //   //do work in here
+// //   return // what you want to return
+// // }
+// const addNumbers = (a, b) => {
+//   return a + b;
+// };
+// addNumbers(1, 2);
 
-// console.log(groceryList, "before splice()");
-// groceryList.splice(0, 1, favoriteSnack);
-// console.log(
-//   groceryList.splice(0, 1, favoriteSnack),
-//   "the return value of groceryList.splice(0, 1, favoriteSnack)"
-// );
-// console.log(groceryList, "after splice()");
+// //simplified arrow function syntax
+// //if you can do all of your work on one line then you
+// //can skip the curly braces and return statement
+// // const nameOfFunction = (parameters) => //will return what you put here
+//const addNumbers = (a, b) => a + b
+//const addNumbers = (a, b) => console.log(a + b);
+//addNumbers(1, 2);
 
-// //VARIABLE DECLARATIONS:
-// //There are three keywords that allow us to declare variables in JavaScript: var, let and const
-// //let is a good choice when you want to be able to redefine the value associated with your variable
-// //const is a good choice when you don't want to be able to redefine the value of your variable
-// const accountNumber = 1234;
-//console.log( accountNumber)
+// let divide = () => 2000 / 100;
+// let percent = (n) => n / 100;
+// let square = (x) => x * x;
+// let add = (a, b) => a + b;
 
-// //what do you expect to happen when we try to redefine the variable accountNumber?
-// accountNumber = 4567;
+// console.log(divide());
+// console.log(percent(50));
+// console.log(square(5));
+// console.log(add(5, 10));
 
-// let email = "yourName@aol.com";
-// console.log(email);
+// function receivesAFunction(callback) {
+//   callback();
+// }
 
-// //what do you expect to happen when we try to update the value of email with our new email address?
-// email = "yourName@gmail.com";
-// console.log(email);
+// function returnsANamedFunction() {
+//   const namedFn = () => console.log("this is a named function");
+//   return namedFn;
+// }
 
-// //when you want to declare a variable is it necessary to include a keyword?
-// //when you want to change the value of a variable is it necessary to include a keyword?
+// function returnsAnAnonymousFunction() {
+//   return () => console.log("this is an anonymous function");
+// }
 
-// let fashionIcon = "Audrey Hepburn";
-// console.log(fashionIcon)
-// fashionIcon = "Beyoncé";
-// console.log(fashionIcon)
+//It's so hard to decide where to go on vacation
+//write a function that accepts an array of vacation options
+// and randomly returns one of the options
 
-//scope can seem really complicated but put as simply as possible 
-//Think of {} in javaScript like little fences or boundaries
-//get bracket pair extension...it will help you immensely
+// function chooseForMe(vacationOptions) {
+//   let randomIndex = Math.floor(vacationOptions.length * Math.random());
+//   console.log(vacationOptions[randomIndex]);
+//   return vacationOptions[randomIndex];
+// }
+// chooseForMe(["Venice", "Rome", "Milan"]);
 
-//important vocabulary: global scope 
+// let divide = () => 2000/100
+// let square = x => x * x;
+// let add = (a, b) => a + b;
 
-function greeting(name) {
-  console.log(`Hello, ${name}`);
-
-  function chineseGreeting(name) {
-    //console.log(`Nihao, ${name}`);
-  }
-  chineseGreeting("Ciara");
-  chineseGreeting(name);
-}
-//chineseGreeting("Octavia");
-greeting("Christine");
-
-//make a list of 3 places Christine would like to visit
-// in order from least to most
-//let christinesList = []
-//let ciarasList = ["Ft.Lauderdale", "Japan", "Taiwan"];
-// function travelDestinations(list) {
-//   for (let i = 0; i < list.length; i++) {
-//     let favoriteDestination = list[list.length - 1];
-//     console.log(list[i]);
+// function distanceFromHqInBlocks(blockNumber) {
+//   if (blockNumber > 42) {
+//       console.log(42 - blockNumber)
+//     return blockNumber - 42;
+//   } else {
+//       console.log(42 - blockNumber)
+//     return 42 - blockNumber;
 //   }
-//   //what do you think will happen when I console.log(favoriteDestination) ?
-//   //explanation at the bottom of this file
-//   console.log(favoriteDestination, "=favoriteDestination");
 // }
+// //                      *
+// //35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50
+// distanceFromHqInBlocks(50)
 
-// function travelDestinations(list) {
-//   let favoriteDestination;
-//   for (let i = 0; i < list.length; i++) {
-//     favoriteDestination = list[list.length - 1];
-//     console.log(list[i]);
+// function distanceFromHqInFeet (someValue) {
+//     distanceFromHqInBlocks(someValue);
+//     // calls distanceFromHqInBlocks from inside the distanceFromHqInFeet function,
+//     // passing the argument from distanceFromHqInFeet into distanceFromHqInBlocks
+//     //the return value of distanceFromHqInBlocks can then be used to calculate feet
 //   }
-//   //what do you think will happen when I console.log(favoriteDestination) ?
-//   console.log(favoriteDestination, "=favoriteDestination");
-// }
-// travelDestinations(ciarasList);
+// // Each block in Manhattan is 264 feet long
+//   //distanceTravelledInFeet: Calculates the number of feet a passenger travels
+//   //given a starting block and an ending block
+//   //— it only calculates distance North and South (uptown/downtown).
+//   //It uses the knowledge that a block is 264 feet long.
 
-// script.js:134 Uncaught ReferenceError: favoriteDestination is not defined
-//     at travelDestinations (script.js:134) favoriteDestination is scoped to
-//our for loop but we have tried to call it in travelDestinations
-
-// Hoisting is a JavaScript mechanism where variables and function declarations
-//are moved to the top of their scope before code execution.
-
-//In plain English: hoisting means that variable and function declarations
-//are read first before any other code is executed as opposed to being read in a
-//strict top to bottom order
-
-//put another way variable declarations are processed before any code is executed
-
-//Take note of the fact that the hoisting mechanism only moves the declaration.
-// The assignments are left in place.
-//variables declared with "var", "let", "const" are all hoisted, but
-// while var variables are initialized with undefined,
-//let and const variables are not initialized.
-
-//https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/
-//^^nice summary in bottom paragraph
-// console.log(goodbye, "before initialization");
-// var goodbye = "Sayonara";
-// //console.log(goodbye, "after initialization");
-
-// function sayGoodbye() {
-//   //console.log(goodbye, "within sayGoodbye() function before initializaion");
-//   var goodbye = "Adios";
-//   //console.log(goodbye, "inside of sayGoodbye() function after initilization");
-// }
-// sayGoodbye();
-// //console.log(goodbye, " outside of function after the function has been called");
-
-// var goodbye = "Tzai Jien";
-// //console.log(goodbye, "outside of function after reassignment");
+//   //calculatesFarePrice:
+//   //Given the same starting and ending block as the previous test (hint hint),
+//   // return the fare for the customer. The first four hundred feet are free.
+//   //For a distance between 400 and 2000 feet, the price is 2 cents per foot (
+// //not including 400, which are free!).
+// //Then Scuber charges a flat fare for a distance over 2000 feet and under 2500 feet.
+// // Finally, Scuber does not allow any rides over 2500 feet —
+// //the function returns 'cannot travel that far' if a ride over 2500 feet is requested.
