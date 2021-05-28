@@ -1,4 +1,7 @@
-//function syntax:
+//A function contains the code necessary to accomplish a specific task.
+// Functions usually "take in" data, process it, and "return" a result.
+
+//FUNCTION SYNTAX:
 // function nameOfFunction(parameters){
 //   //do work in here
 //   return //what you want to return
@@ -7,11 +10,16 @@
 // function addNumbers(a, b) {
 //   return a + b;
 // }
+// the line below shows the proper syntax for calling a function
+// functionName(*pass arguments here*)
 // addNumbers(1, 2);
 
-//write a function that accepts two numbers multiples them and returns the product
+//write a function that accepts two numbers multiplies them and returns the product
 
-// //arrow function syntax:
+//write a function that accepts an array and returns the first element
+
+
+// //ARROW FUNCTION SYNTAX:
 // // const nameOfFunction = (parameters) => {
 // //   //do work in here
 // //   return // what you want to return
@@ -21,52 +29,27 @@
 // };
 // addNumbers(1, 2);
 
-// //simplified arrow function syntax
+//using arrow syntax write a function that accepts two numbers multiplies them and returns the product
+
+//using arrow syntax write a function that accepts an array and returns the first element
+
+// //SIMPLIFIED ARROW FUNCTION SYNTAX
 // //if you can do all of your work on one line then you
 // //can skip the curly braces and return statement
+// // when there are no braces, arrow functions have an implicit return
+// // meaning they automatically return the result of the last expression
+
 // // const nameOfFunction = (parameters) => //will return what you put here
+
 //const addNumbers = (a, b) => a + b
 //const addNumbers = (a, b) => console.log(a + b);
 //addNumbers(1, 2);
 
-// let divide = () => 2000 / 100;
-// let percent = (n) => n / 100;
-// let square = (x) => x * x;
-// let add = (a, b) => a + b;
+//using simplified arrow syntax write a function that accepts two numbers multiplies them and returns the product
 
-// console.log(divide());
-// console.log(percent(50));
-// console.log(square(5));
-// console.log(add(5, 10));
+//using simplified arrow syntax write a function that accepts an array and returns the first element
 
-// function receivesAFunction(callback) {
-//   callback();
-// }
-
-// function returnsANamedFunction() {
-//   const namedFn = () => console.log("this is a named function");
-//   return namedFn;
-// }
-
-// function returnsAnAnonymousFunction() {
-//   return () => console.log("this is an anonymous function");
-// }
-
-//It's so hard to decide where to go on vacation
-//write a function that accepts an array of vacation options
-// and randomly returns one of the options
-
-// function chooseForMe(vacationOptions) {
-//   let randomIndex = Math.floor(vacationOptions.length * Math.random());
-//   console.log(vacationOptions[randomIndex]);
-//   return vacationOptions[randomIndex];
-// }
-// chooseForMe(["Venice", "Rome", "Milan"]);
-
-// let divide = () => 2000/100
-// let square = x => x * x;
-// let add = (a, b) => a + b;
-
+//BASIC FUNCTIONS LAB
 // function distanceFromHqInBlocks(blockNumber) {
 //   if (blockNumber > 42) {
 //       console.log(42 - blockNumber)
@@ -100,3 +83,45 @@
 // //Then Scuber charges a flat fare for a distance over 2000 feet and under 2500 feet.
 // // Finally, Scuber does not allow any rides over 2500 feet —
 // //the function returns 'cannot travel that far' if a ride over 2500 feet is requested.
+
+//ARROW FUNCTIONS LAB
+// let divide = () => 2000 / 100;
+// let percent = (n) => n / 100;
+// let square = (x) => x * x;
+// let add = (a, b) => a + b;
+
+// console.log(divide());
+// console.log(percent(50));
+// console.log(square(5));
+// console.log(add(5, 10));
+
+//FIRST CLASS FUNCTIONS LAB
+// function receivesAFunction(callback) {
+//   callback();
+// }
+
+// function returnsANamedFunction() {
+//   const namedFn = () => console.log("this is a named function");
+//   return namedFn;
+// }
+
+// function returnsAnAnonymousFunction() {
+//   return () => console.log("this is an anonymous function");
+// }
+
+
+
+//MORE FUNCTION PRACTICE:
+//It's so hard to decide where to go on vacation
+//write a function that accepts an array of vacation options
+// and randomly returns one of the options
+// HINTS: check out these links
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
+
+// function chooseForMe(vacationOptions) {
+//   let randomIndex = Math.floor(vacationOptions.length * Math.random());
+//   console.log(vacationOptions[randomIndex]);
+//   return vacationOptions[randomIndex];
+// }
+// chooseForMe(["Venice", "Rome", "Milan"]);
